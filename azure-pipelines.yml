@@ -1,4 +1,5 @@
 # Docker
+
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -15,7 +16,15 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
+
+
 steps:
+- task: Backslash-Security-Scan@0
+  inputs:
+    authToken: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjM1MWE5MWFlIn0.eyJzdWIiOiIxNzZiZDFmNS1jNmVjLTQ5YTgtYTU2MS1jYjExZTk2NmE0NzUiLCJ0eXBlIjoidGVuYW50QWNjZXNzVG9rZW4iLCJ0ZW5hbnRJZCI6ImMyOWJlZWQwLWJlNzItNDcyMi05OGExLWNmM2Q3NDE5NDE3OCIsImFwcGxpY2F0aW9uSWQiOiJjYjE1MTI4Ny01ZDEzLTRhOTQtODNhNi05MGM3Y2FkOWVkYmIiLCJyb2xlcyI6WyJGRVRDSC1ST0xFUy1CWS1BUEkiXSwicGVybWlzc2lvbnMiOlsiRkVUQ0gtUEVSTUlTU0lPTlMtQlktQVBJIl0sImF1ZCI6IjM1MWE5MWFlLWNiZGQtNDYxMC04NTgxLTBlZGZlZTVhNWY1MiIsImlzcyI6Imh0dHBzOi8vYXV0aC5iYWNrc2xhc2guc2VjdXJpdHkiLCJpYXQiOjE3NDIzMjc4MTV9.yIJwNnN3y9IxPcdO6oepo-n3IGspkdrZcz_NQh-4zvX_Nczqi1a2ou-o-RW9KMlVSJo9C7hvENfd7Kh7FEd0Q6Kwi_CGAPzXoGJPRYSoPjFuPMFeWWtAR6RwgvCCh5-E0tW47uvtQTruoGvKBxmooi_dNJnUKLuWI3U3g6RuGufCBh9_FQq37uKbV7t9k9Gx11Q5nhuE-bL3ZAD8kW28TMJSHTbobMtNkBvQmTCdOVJrMfa7IXqL4938Wp16CM7QMDLO6_nQcxBSYqKMlRxit2OTIoZW-cUjPA_sTfAPFwFlEU9Fag_b3Ksdbn3ZsLqcUaxd4DU1TGSolNiJ3xaEkA'
+    ignoreBlock: 'false'
+    organization: 'zburns12'
+    pushToDashboard: true
 - task: Docker@2
   displayName: Build an image
   inputs:
