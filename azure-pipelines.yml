@@ -25,6 +25,7 @@ steps:
     ignoreBlock: 'false'
     organization: 'zburns12'
     pushToDashboard: true
+    baselineBranch: 'main'
     prScan: 'true'
 - task: Docker@2
   displayName: Build an image
