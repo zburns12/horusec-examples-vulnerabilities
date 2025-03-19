@@ -1,4 +1,6 @@
 module github.com/ZupIT/horusec/example1
+module github.com/ZupIT/horusec/example444
+module github.com/ZupIT/horusec/example134
 
 go 1.16
 
