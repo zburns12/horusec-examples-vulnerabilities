@@ -2,6 +2,8 @@ HORUSEC ?= horusec
 GO ?= go
 ADDLICENSE ?= addlicense
 
+ADDLICENSE ?= addlicense
+
 license:
 	$(GO) get -u github.com/google/addlicense
 	@$(ADDLICENSE) -check -f ./copyright.txt $(shell find . -type f -not -path "./.git/*" -not -path "./csharp/example2/*" | sort -u)
